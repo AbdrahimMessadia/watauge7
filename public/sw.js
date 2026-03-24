@@ -21,7 +21,6 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Skip non-GET, API calls, chrome-extension
   if (e.request.method !== 'GET') return;
   if (e.request.url.includes('/api/')) return;
   if (e.request.url.startsWith('chrome-extension')) return;
